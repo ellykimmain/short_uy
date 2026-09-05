@@ -10,6 +10,7 @@ class Config:
     gemini_api_key: str | None
     text_model: str
     image_model: str
+    tts_model: str
     ffmpeg_bin: str
 
 
@@ -23,5 +24,6 @@ def load_config() -> Config:
         gemini_api_key=os.getenv("GEMINI_API_KEY"),
         text_model=os.getenv("GEMINI_TEXT_MODEL", "gemini-3.8-flash"),
         image_model=os.getenv("GEMINI_IMAGE_MODEL", "gemini-3.1-flash-image"),
+        tts_model=os.getenv("GEMINI_TTS_MODEL", "gemini-2.5-flash-preview-tts"),
         ffmpeg_bin=os.getenv("FFMPEG_BIN", "ffmpeg"),
     )
